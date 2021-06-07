@@ -88,8 +88,8 @@
             echo "<th>State</th>";
             echo "<th>Domain Date Created</th>";
             echo "<th>Domain Date expired</th>";
-            echo "<th>Age of the domain</th>";
-            echo "<th>community score</th>";
+            echo "<th>Age</th>";
+            echo "<th>VT Score</th>";
             echo "<th>IP address</th>";
             echo "<th>Registrar name</th>";
             echo "<th>Location</th>";
