@@ -1,6 +1,6 @@
 <?php
 
-    $servername = "localhost";
+    $servername = "3.138.169.141";
     $username = "root";
     $password = "";
     $dbname = "scraping";
