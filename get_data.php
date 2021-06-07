@@ -82,6 +82,9 @@
                 }
             }
         }
+        if($_POST['state'] == "truncate"){
+            echo "OKOK";
+        }
     }   
     
     function test_result($domain){

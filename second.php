@@ -65,7 +65,7 @@
     <?php
         // $servername = "localhost";
     // $servername = "http://3.138.169.141";
-    $servername = "127.0.0.1";
+        $servername = "127.0.0.1";
 
         $username = "cooker";
         $password = "Password123$";
@@ -144,7 +144,17 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $(".download").click(function(){
-                tablesToExcel(['domains_table','tbl2'], ['Domains','IPs'], 'TestBook.xls', 'Excel');
+                // tablesToExcel(['domains_table','tbl2'], ['Domains','IPs'], 'TestBook.xls', 'Excel');
+                $.ajax({
+                    url: "get_data.php",
+                    type: "post",
+                    data: {
+                        state: "truncate"
+                    },
+                    success:function(res){
+                        console.log(res);
+                    }
+                });
             });
             $(".upload").click(function(){
                 $("#fileUpload").click();
