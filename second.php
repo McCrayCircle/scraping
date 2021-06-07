@@ -55,7 +55,7 @@
 	  <button class="btn btn-primary upload">Upload</button>
       <button class="btn btn-info start">Start</button>
 	  <button class="btn btn-success download" >Download</button>
-	  <a href="http://localhost/index.php" class="btn btn-danger">Back</a>
+	  <a href="http://3.138.169.141/index.php" class="btn btn-danger">Back</a>
   </div>
 </div>
     <form method="post" enctype="multipart/form-data" class="mb-3" style="display: none">
