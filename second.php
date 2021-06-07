@@ -67,8 +67,8 @@
     // $servername = "http://3.138.169.141";
     $servername = "127.0.0.1";
 
-        $username = "root";
-        $password = "password";
+        $username = "cooker";
+        $password = "Password123$";
         $dbname = "scraping";
     
         $conn = new mysqli($servername, $username, $password, $dbname);
