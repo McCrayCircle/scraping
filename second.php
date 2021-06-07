@@ -65,7 +65,7 @@
     <?php
         $servername = "3.138.169.141";
         $username = "root";
-        $password = "";
+        $password = "password";
         $dbname = "scraping";
     
         $conn = new mysqli($servername, $username, $password, $dbname);
