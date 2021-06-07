@@ -63,7 +63,7 @@
     </form>
 
     <?php
-        $servername = "3.138.169.141";
+        $servername = "localhost";
         $username = "root";
         $password = "password";
         $dbname = "scraping";
