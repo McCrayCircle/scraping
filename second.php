@@ -64,7 +64,8 @@
 
     <?php
         // $servername = "localhost";
-    $servername = "http://3.138.169.141";
+    // $servername = "http://3.138.169.141";
+    $servername = "127.0.0.1";
 
         $username = "root";
         $password = "password";
