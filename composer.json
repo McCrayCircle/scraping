@@ -1,0 +1,15 @@
+{
+    "name": "trust/scrapping",
+    "autoload": {
+        "psr-4": {
+            "Trust\\Scrapping\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Vladislav",
+            "email": "cooker98910@gmail.com"
+        }
+    ],
+    "require": {}
+}
