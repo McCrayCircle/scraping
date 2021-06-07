@@ -1,3 +1,10 @@
+<?php
+
+echo "OKOKOKOKOKOK";
+die();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
