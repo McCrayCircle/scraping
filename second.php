@@ -1,22 +1,6 @@
-<?php
-    $servername = "localhost";
-    // $servername = "http://3.138.169.141";
-        // $servername = "127.0.0.1";
-
-        // $username = "cooker";
-    $username = "root";
-        // $password = "Password123$";
-    $password = "";
-    $dbname = "scraping";
-    
-    $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    
+<?php 
+    require "functions/connect_mysql.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
