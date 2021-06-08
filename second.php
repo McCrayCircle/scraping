@@ -1,5 +1,6 @@
 <?php 
-    require "./functions/connect_mysql.php"
+    require "./functions/connect_mysql.php";
+    die("ook");
 ?>
 <!DOCTYPE html>
 <html lang="en">

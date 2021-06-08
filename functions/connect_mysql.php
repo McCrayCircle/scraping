@@ -1,6 +1,6 @@
 <?php
     // $servername = "localhost";
-    $servername = "http://3.138.169.141";
+    $servername = "3.138.169.141";
     // $username = 'root';
     $username = "cooker";
     // $password = '';
@@ -10,6 +10,6 @@
 
     $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
-        if ($conn->connect_error) {
+    if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
