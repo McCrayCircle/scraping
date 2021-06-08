@@ -48,7 +48,7 @@
   <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler button.</p>
   <h1 class="display-3 pb-2 d-none d-sm-inline-block">Search &amp; Extract Data<br> on the Web <span class="text-success">10x Faster</span></h1>
   <div class="mt-4">
-	  <a href="http://3.138.169.141/second.php" class="btn btn-primary">Get Started</a>
+	  <a href="second.php" class="btn btn-primary">Get Started</a>
   </div>
 </div>
 
