@@ -1,5 +1,5 @@
 <?php 
-    require "http://3.138.169.141/functions/connect_mysql.php"
+    require "3.138.169.141/functions/connect_mysql.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
