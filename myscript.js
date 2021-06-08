@@ -26,7 +26,7 @@ $(document).ready(function(){
             url: "functions/upload_excel_data.php",
             success: function(res){
                 location.reload();
-                alert("You added new "+res+" rows");
+                // alert("You added new "+res+" rows");
             }
         });
     };
