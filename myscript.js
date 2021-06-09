@@ -12,7 +12,7 @@ $(document).ready(function(){
         var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[Sheet]);
         var array = [] ;
         for (var i = 0; i < excelRows.length; i++) {
-            array.push(excelRows[i]['cooltechtube.com']);
+            array.push(excelRows[i]['1phorm.com']);
         }
         var unique = array.filter(function(elem, index, self) {
             return index === self.indexOf(elem);
@@ -26,7 +26,7 @@ $(document).ready(function(){
             url: "functions/upload_excel_data.php",
             success: function(res){
                 location.reload();
-                // alert("You added new "+res+" rows");
+                alert("SUCCESSFULLY UPLOADED!!!");
             }
         });
     };
@@ -54,7 +54,8 @@ $(document).ready(function(){
         ele.css("width", percent.toFixed(0) + "%").css('display', 'flex');
         ele.text(percent.toFixed(0) + "%");
     }
-    
+    var first_time = 0 ;
+    var final_time = 0;
     var oneRequest = function() {
         if($(".pending").length > 0){
             var length  = $(".pending").length;
@@ -66,7 +67,6 @@ $(document).ready(function(){
             parent.find('.nomean').focus();
             $("tr").removeClass('current_row');
             parent.addClass('current_row');
-            
             $.ajax({
                 url: "functions/get_data.php",
                 type: "post",
@@ -75,10 +75,9 @@ $(document).ready(function(){
                     pending_text: pending_text,
                     pending_id: pending_id
                 },
-                success: function(res){
+                success: function(res){                                              
                     if(res.create_time == "" || res.expire_time == "" || res.age == "" || res.community_score == "" || res.ip == "" || res.name == "" || res.location == "" || res.blacklist == "" || res.test_result == "") {
                         pending_ele.removeClass("pending").addClass("yet");
-                    }else if(res.create_time){
                         pending_ele.removeClass("pending").removeClass("yet").addClass("success").text("success");
                         pending_ele.parent().children().eq(3).text(res.create_time);
                         pending_ele.parent().children().eq(4).text(res.expire_time);
@@ -87,8 +86,8 @@ $(document).ready(function(){
                         pending_ele.parent().children().eq(7).text(res.ip);
                         pending_ele.parent().children().eq(8).text(res.name);
                         pending_ele.parent().children().eq(9).text(res.location);
-                        pending_ele.parent().children().eq(10).text('<a href="' + res.blacklist_url + '">' + res.blacklist + "</a>");
-                        pending_ele.parent().children().eq(11).text('<a href="' + res.test_url + '">' + res.test_result + "</a>");
+                        pending_ele.parent().children().eq(10).html('<a href="' + res.blacklist_url + '">' + res.blacklist + "</a>");
+                        pending_ele.parent().children().eq(11).html('<a href="' + res.test_url + '">' + res.test_result + "</a>");
                     } 
                     if(res.get_ip == "OK"){
                         pending_ele.removeClass("pending").removeClass("success");
@@ -132,27 +131,31 @@ $(document).ready(function(){
 
             for (var i = 0; i < tables.length; i++) {
                 if (!tables[i].nodeType) tables[i] = document.getElementById(tables[i]);
-                for (var j = 0; j < tables[i].rows.length; j++) {
-                rowsXML += '<Row>'
-                for (var k = 0; k < tables[i].rows[j].cells.length; k++) {
-                    var dataType = tables[i].rows[j].cells[k].getAttribute("data-type");
-                    var dataStyle = tables[i].rows[j].cells[k].getAttribute("data-style");
-                    var dataValue = tables[i].rows[j].cells[k].getAttribute("data-value");
-                    dataValue = (dataValue)?dataValue:tables[i].rows[j].cells[k].innerHTML;
-                    var dataFormula = tables[i].rows[j].cells[k].getAttribute("data-formula");
-                    dataFormula = (dataFormula)?dataFormula:(appname=='Calc' && dataType=='DateTime')?dataValue:null;
-                    ctx = {  attributeStyleID: (dataStyle=='Currency' || dataStyle=='Date')?' ss:StyleID="'+dataStyle+'"':''
-                        , nameType: (dataType=='Number' || dataType=='DateTime' || dataType=='Boolean' || dataType=='Error')?dataType:'String'
-                        , data: (dataFormula)?'':dataValue
-                        , attributeFormula: (dataFormula)?' ss:Formula="'+dataFormula+'"':''
-                        };
-                    rowsXML += format(tmplCellXML, ctx);
+                if(tables[i] != null){
+                    if(tables[i].rows.length > 0){
+                        for (var j = 0; j < tables[i].rows.length; j++) {
+                            rowsXML += '<Row>'
+                            for (var k = 0; k < tables[i].rows[j].cells.length; k++) {
+                                var dataType = tables[i].rows[j].cells[k].getAttribute("data-type");
+                                var dataStyle = tables[i].rows[j].cells[k].getAttribute("data-style");
+                                var dataValue = tables[i].rows[j].cells[k].getAttribute("data-value");
+                                dataValue = (dataValue)?dataValue:tables[i].rows[j].cells[k].innerHTML;
+                                var dataFormula = tables[i].rows[j].cells[k].getAttribute("data-formula");
+                                dataFormula = (dataFormula)?dataFormula:(appname=='Calc' && dataType=='DateTime')?dataValue:null;
+                                ctx = {  attributeStyleID: (dataStyle=='Currency' || dataStyle=='Date')?' ss:StyleID="'+dataStyle+'"':''
+                                    , nameType: (dataType=='Number' || dataType=='DateTime' || dataType=='Boolean' || dataType=='Error')?dataType:'String'
+                                    , data: (dataFormula)?'':dataValue
+                                    , attributeFormula: (dataFormula)?' ss:Formula="'+dataFormula+'"':''
+                                    };
+                                rowsXML += format(tmplCellXML, ctx);
+                            }
+                            rowsXML += '</Row>'
+                        }
+                        ctx = {rows: rowsXML, nameWS: wsnames[i] || 'Sheet' + i};
+                        worksheetsXML += format(tmplWorksheetXML, ctx);
+                        rowsXML = "";
+                    }
                 }
-                rowsXML += '</Row>'
-                }
-                ctx = {rows: rowsXML, nameWS: wsnames[i] || 'Sheet' + i};
-                worksheetsXML += format(tmplWorksheetXML, ctx);
-                rowsXML = "";
             }
 
             ctx = {created: (new Date()).getTime(), worksheets: worksheetsXML};
