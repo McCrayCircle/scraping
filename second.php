@@ -1,6 +1,6 @@
 <?php 
-    require "./functions/connect_mysql.php";
     die("ERROR");
+    require "./functions/connect_mysql.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
