@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    alert("My skype: live:.cid.80a0d2247dc253ec");
     
 
     function GetTableFromExcel(data) {
