@@ -1,6 +1,6 @@
 <?php
     // $servername = "localhost";
-    $servername = "3.138.169.141";
+    $servername = "127.0.0.1";
     // $username = 'root';
     $username = "cooker";
     // $password = '';
