@@ -77,6 +77,7 @@ $(document).ready(function(){
                 },
                 success: function(res){                                              
                     if(res.create_time == "" || res.expire_time == "" || res.age == "" || res.community_score == "" || res.ip == "" || res.name == "" || res.location == "" || res.blacklist == "" || res.test_result == "") {
+                        if(res.community_score == 0) community_score = "0/85";
                         pending_ele.removeClass("pending").addClass("yet");
                         pending_ele.removeClass("pending").removeClass("yet").addClass("success").text("success");
                         pending_ele.parent().children().eq(3).text(res.create_time);
