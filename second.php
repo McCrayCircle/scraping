@@ -1,59 +1,5 @@
 <?php 
     require "./functions/connect_mysql.php";
-    // include './functions/simplehtmldom_2_0-RC2/simple_html_dom.php';  
-    // function test_result($domain){
-    //     $ch = curl_init('https://zulu.zscaler.com/');
-    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    //     // get headers too with this line
-    //     curl_setopt($ch, CURLOPT_HEADER, 1);
-    //     $result = curl_exec($ch);
-
-    //     $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-    //     $header = substr($result, 0, $header_size);
-    //     $body = substr($result, $header_size);
-    //     // get cookie
-    //     // multi-cookie variant contributed by @Combuster in comments
-    //     preg_match_all('/^Set-Cookie:\s*([^;]*)/mi', $header, $matches);
-    //     $cookies = array();
-    //     foreach($matches[1] as $item) {
-    //         parse_str($item, $cookie);
-    //         $cookies = array_merge($cookies, $cookie);
-    //     }
-    //     $cookie = $cookies['_zulu_session'];
-
-        
-    //     $dom = str_get_html($body);
-    //     $tag = $dom->find("[name=csrf_token]");
-    //     $csrf_token = $tag[0]->value;
-        
-    //     $postfields = array('url'=>$domain, 'csrf_token'=>$csrf_token);
-    //     $ch = curl_init();
-    //     curl_setopt($ch, CURLOPT_URL, 'https://zulu.zscaler.com/');
-    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    //     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    //     curl_setopt($ch, CURLOPT_POST, 1);
-    //     // Edit: prior variable $postFields should be $postfields;
-    //     curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-    //     curl_setopt($ch, CURLOPT_COOKIE, "_zulu_session=". $cookie);
-    //     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // On dev server only!
-    //     $result = curl_exec($ch);
-
-    //     $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-    //     $header = substr($result, 0, $header_size);
-    //     $body = substr($result, $header_size);
-    //     $dom = str_get_html($body);
-    //     $test_result = $dom->find("#jscore");
-    //     $current_url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
-    //     if($test_result = null) {
-    //         return ['test_result' => "", 'current_url' => ""];
-    //     }
-    //     if($current_url == null) {
-    //         return ['test_result' => "", 'current_url' => ""];
-    //     }
-    //     return ['test_result' => $test_result[0]->innertext, 'current_url' => $current_url];
-    // }
-    // var_dump(test_result("applevactions.com"));
-    // die();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -123,7 +123,7 @@
         if($dom->find("[alt=]")) {
             $server_location = $dom->find("[alt=]")[0]->parentNode()->plaintext;
         } else $server_location = "";
-        if($dom->find("table")){
+        if(count($dom->find("table td strong")) > 1){
             $ip = $dom->find("table td strong")[1]->innertext;
         } else $ip = "";
         $current_url = "https://www.urlvoid.com/scan/" . $domain ;

@@ -1,10 +1,10 @@
 <?php
-    // $servername = "localhost";
-    $servername = "3.138.169.141";
-    // $username = 'root';
-    $username = "cooker";
-    // $password = '';
-    $password = "Password123$";
+    $servername = "localhost";
+    // $servername = "3.138.169.141";
+    $username = 'root';
+    // $username = "cooker";
+    $password = '';
+    // $password = "Password123$";
     
     $dbname = "scraping";
 
