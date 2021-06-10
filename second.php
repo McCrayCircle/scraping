@@ -1,5 +1,5 @@
 <?php 
-    require "./functions/connect_mysql.php";
+    // require "./functions/connect_mysql.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
